@@ -2,7 +2,7 @@
 const config = {
 	coverageProvider: 'v8',
 
-	setupFilesAfterEnv: ['./jest.setup.js'],
+	setupFilesAfterEnv: ['@jung/configs/jest.setup.js'],
 	testEnvironment: 'jest-environment-jsdom',
 	preset: 'ts-jest',
 	testMatch: ['**/*.test.[jt]s?(x)'],
