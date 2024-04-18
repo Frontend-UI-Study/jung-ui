@@ -1,6 +1,4 @@
-import "./button.css";
-
-import { button } from "@jung/design-system/styles/button.css";
+import './button.css';
 
 interface ButtonProps {
 	/**
@@ -14,7 +12,7 @@ interface ButtonProps {
 	/**
 	 * How large should the button be?
 	 */
-	size?: "small" | "medium" | "large";
+	size?: 'small' | 'medium' | 'large';
 	/**
 	 * Button contents
 	 */
@@ -28,20 +26,6 @@ interface ButtonProps {
 /**
  * Primary UI component for user interaction
  */
-export const Button = ({
-	primary = false,
-	size = "medium",
-	backgroundColor,
-	label,
-	...props
-}: ButtonProps) => {
-	const mode = primary
-		? "storybook-button--primary"
-		: "storybook-button--secondary";
-
-	return (
-		<button type="submit" className={button}>
-			{label}
-		</button>
-	);
+export const Button = ({ label }: ButtonProps) => {
+	return <button type='submit'>{label}</button>;
 };
