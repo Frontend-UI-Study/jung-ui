@@ -1,4 +1,4 @@
-import { type Sprinkles, baseReset, elementResets, sprinkles } from '../styles';
+import { type Sprinkles, elementResets, sprinkles } from '../styles';
 
 import clsx, { type ClassValue } from 'clsx';
 import { omit, pick } from 'lodash';
@@ -20,6 +20,6 @@ export function atoms(atoms: Atoms) {
 	return clsx(
 		sprinklesClassNames,
 		className,
-		reset ? [baseReset, elementResets[reset]] : null,
+		reset ? [elementResets[reset]] : null,
 	);
 }
