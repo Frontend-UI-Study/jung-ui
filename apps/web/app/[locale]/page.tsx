@@ -1,4 +1,5 @@
 import ExampleClientComponent from '@/components/ExampleClientComponent';
+import InputTest from '@/components/InputTest';
 import LanguageChanger from '@/components/LanguageChanger';
 import TranslationProvider from '@/components/TranslationsProvider';
 import { Button } from '@jung/design-system';
@@ -34,6 +35,8 @@ export default async function Home({ params: { locale } }: Params) {
 			<Button variant='outline'>Outline Button</Button>
 			<Button rounded>Rounded Button</Button>
 			<Button variant='ghost'>Ghost Button</Button>
+
+			<InputTest />
 		</div>
 	);
 }

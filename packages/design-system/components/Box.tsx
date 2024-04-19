@@ -6,7 +6,7 @@ type HTMLProperties = Omit<
 	'as' | 'className' | 'color' | 'height' | 'width' | 'size'
 >;
 
-type BoxProps = HTMLAttributes<HTMLElement> &
+export type BoxProps = HTMLAttributes<HTMLElement> &
 	HTMLProperties &
 	Atoms & {
 		as?: React.ElementType;
