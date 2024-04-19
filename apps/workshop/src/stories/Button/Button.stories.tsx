@@ -59,3 +59,11 @@ export const Ghost: Story = {
 		children: 'Ghost Button',
 	},
 };
+
+export const WithIconButton: Story = {
+	args: {
+		prefix: '⬅️',
+		suffix: '➡️',
+		children: 'Prefix and Suffix',
+	},
+};

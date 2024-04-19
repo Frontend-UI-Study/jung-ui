@@ -29,9 +29,9 @@ export const Button = forwardRef(
 				ref={ref}
 				{...restProps}
 			>
-				{prefix}
+				{prefix && <Box as='span'>{prefix}</Box>}
 				{children}
-				{suffix}
+				{suffix && <Box as='span'>{suffix}</Box>}
 			</Box>
 		);
 	},

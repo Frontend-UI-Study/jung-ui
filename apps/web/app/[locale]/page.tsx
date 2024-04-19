@@ -31,7 +31,9 @@ export default async function Home({ params: { locale } }: Params) {
 			</TranslationProvider>
 			<Button variant='primary'>Primary Button</Button>
 			<Button variant='secondary'>Secondary Button</Button>
-			<Button variant='outline'>Outline Button</Button>
+			<Button variant='outline' prefix={'🎨'}>
+				Outline Button
+			</Button>
 			<Button rounded>Rounded Button</Button>
 			<Button variant='ghost'>Ghost Button</Button>
 		</div>
