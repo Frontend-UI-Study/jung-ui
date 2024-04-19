@@ -8,13 +8,7 @@ globalStyle('body', {
 	boxSizing: 'border-box',
 });
 
-globalStyle('a', {
-	textDecoration: 'none',
-	outline: 'none',
-	color: 'none',
-});
-
-globalStyle('*, *::before, *::after', {
+export const baseReset = style({
 	margin: 0,
 	padding: 0,
 	border: 0,
@@ -24,6 +18,23 @@ globalStyle('*, *::before, *::after', {
 	font: 'inherit',
 	verticalAlign: 'baseline',
 });
+
+// globalStyle('a', {
+// 	textDecoration: 'none',
+// 	outline: 'none',
+// 	color: 'none',
+// });
+
+// globalStyle('*, *::before, *::after', {
+// 	margin: 0,
+// 	padding: 0,
+// 	border: 0,
+// 	minWidth: 0,
+// 	boxSizing: 'border-box',
+// 	fontSize: '100%',
+// 	font: 'inherit',
+// 	verticalAlign: 'baseline',
+// });
 
 const block = style({
 	display: 'block',
@@ -58,7 +69,6 @@ const table = style({
 	borderSpacing: 0,
 });
 
-// Custom reset rules
 const mark = style({
 	backgroundColor: 'transparent',
 	color: 'inherit',
@@ -75,6 +85,8 @@ const select = style({
 
 const a = style({
 	textDecoration: 'none',
+	outline: 'none',
+	color: 'inherit',
 });
 
 const text = style({
@@ -106,7 +118,9 @@ const h4 = sprinkles({
 	fontWeight: 'semibold',
 });
 
-export const element = {
+type Resets = Partial<Record<keyof JSX.IntrinsicElements, string>>;
+
+export const elementResets: Resets = {
 	article: block,
 	aside: block,
 	button,
