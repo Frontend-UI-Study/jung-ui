@@ -198,6 +198,10 @@ importers:
         version: 29.1.2(@babel/core@7.24.0)(jest@29.7.0)(typescript@5.3.3)
 
   packages/design-system:
+    dependencies:
+      lodash:
+        specifier: ^4.17.21
+        version: 4.17.21
     devDependencies:
       '@jung/configs':
         specifier: workspace:*
@@ -208,6 +212,9 @@ importers:
       '@turbo/gen':
         specifier: ^1.12.4
         version: 1.12.4(@types/node@20.11.24)(typescript@5.3.3)
+      '@types/lodash':
+        specifier: ^4.17.0
+        version: 4.17.0
       '@types/node':
         specifier: ^20.11.24
         version: 20.11.24
@@ -4513,6 +4520,10 @@ packages:
     resolution: {integrity: sha512-OvlIYQK9tNneDlS0VN54LLd5uiPCBOp7gS5Z0f1mjoJYBrtStzgmJBxONW3U6OZqdtNzZPmn9BS/7WI7BFFcFQ==}
     dev: true
 
+  /@types/lodash@4.17.0:
+    resolution: {integrity: sha512-t7dhREVv6dbNj0q17X12j7yDG4bD/DHYX7o5/DbDxobP0HnGPgpRz2Ej77aL7TZT3DSw13fqUTj8J4mMnqa7WA==}
+    dev: true
+
   /@types/mdx@2.0.11:
     resolution: {integrity: sha512-HM5bwOaIQJIQbAYfax35HCKxx7a3KrK3nBtIqJgSOitivTD1y3oW9P3rxY9RkXYPUk7y/AjAohfHKmFpGE79zw==}
     dev: true
@@ -8697,7 +8708,6 @@ packages:
 
   /lodash@4.17.21:
     resolution: {integrity: sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==}
-    dev: true
 
   /log-symbols@3.0.0:
     resolution: {integrity: sha512-dSkNGuI7iG3mfvDzUuYZyvk5dD9ocYCYzNU6CYDE6+Xqd+gwme6Z00NS3dUh8mq/73HaEtT7m6W+yUPtU6BZnQ==}

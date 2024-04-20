@@ -8,24 +8,7 @@ globalStyle('body', {
 	boxSizing: 'border-box',
 });
 
-export const baseReset = style({
-	margin: 0,
-	padding: 0,
-	border: 0,
-	minWidth: 0,
-	boxSizing: 'border-box',
-	fontSize: '100%',
-	font: 'inherit',
-	verticalAlign: 'baseline',
-});
-
-// globalStyle('a', {
-// 	textDecoration: 'none',
-// 	outline: 'none',
-// 	color: 'none',
-// });
-
-// globalStyle('*, *::before, *::after', {
+// export const baseReset = style({
 // 	margin: 0,
 // 	padding: 0,
 // 	border: 0,
@@ -35,6 +18,23 @@ export const baseReset = style({
 // 	font: 'inherit',
 // 	verticalAlign: 'baseline',
 // });
+
+// globalStyle('a', {
+// 	textDecoration: 'none',
+// 	outline: 'none',
+// 	color: 'none',
+// });
+
+globalStyle('*, *::before, *::after', {
+	margin: 0,
+	padding: 0,
+	border: 0,
+	minWidth: 0,
+	boxSizing: 'border-box',
+	fontSize: '100%',
+	font: 'inherit',
+	verticalAlign: 'baseline',
+});
 
 const block = style({
 	display: 'block',

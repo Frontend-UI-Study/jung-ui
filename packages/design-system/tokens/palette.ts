@@ -5,7 +5,6 @@ export const palette = {
 	primary200: '#FFF3BF', // Design System Yellow 200
 	primary300: '#FCE588', // Design System Yellow 300
 	primary400: '#F7DE4C', // Design System Yellow 400
-	primary500: '#FFC107',
 
 	// Secondary colors
 	secondary: '#FF6F00', // Design System Orange

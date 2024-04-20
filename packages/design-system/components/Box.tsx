@@ -3,7 +3,7 @@ import { type Atoms, atoms, extractAtoms } from '../utils/atoms';
 
 type HTMLProperties = Omit<
 	React.AllHTMLAttributes<HTMLElement>,
-	'as' | 'className' | 'color' | 'height' | 'width'
+	'as' | 'className' | 'color' | 'height' | 'width' | 'size'
 >;
 
 type BoxProps = HTMLAttributes<HTMLElement> &
