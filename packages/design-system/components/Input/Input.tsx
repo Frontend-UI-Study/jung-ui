@@ -1,23 +1,21 @@
-import { type InputHTMLAttributes, type Ref, forwardRef } from 'react';
-
 import { Box } from '../Box';
+
+import { type InputHTMLAttributes, forwardRef } from 'react';
+import type { Atoms } from '../../utils/atoms';
 import * as styles from './Input.css';
 
 type OmitProps = 'size' | 'width' | 'height';
 
-interface Props extends Omit<InputHTMLAttributes<HTMLInputElement>, OmitProps> {
+interface InputProps
+	extends Omit<InputHTMLAttributes<HTMLInputElement>, OmitProps>,
+		Omit<Atoms, 'className' | 'color'> {
 	variant?: 'primary' | 'outline' | 'ghost';
 	size?: 'sm' | 'md' | 'lg';
 	rounded?: boolean;
 }
-
-export const Input = forwardRef(
-	(
-		{ className, variant, size, rounded, ...restProps }: Props,
-		ref?: Ref<HTMLInputElement>,
-	) => {
+export const Input = forwardRef<HTMLInputElement, InputProps>(
+	({ variant, size, rounded, ...restProps }, ref) => {
 		const inputStyle = styles.input({ variant, size, rounded });
-
 		return <Box as='input' className={inputStyle} ref={ref} {...restProps} />;
 	},
 );

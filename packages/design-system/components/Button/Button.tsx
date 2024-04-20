@@ -1,10 +1,13 @@
-import { Box } from '../Box';
-import { button } from './Button.css';
-
 import { type ButtonHTMLAttributes, type ReactNode, forwardRef } from 'react';
+import type { Atoms } from '../../utils/atoms';
+import { Box } from '../Box';
+import * as styles from './Button.css';
 
-interface Props
-	extends Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'prefix'> {
+type OmitProps = 'prefix';
+
+interface ButtonProps
+	extends Omit<ButtonHTMLAttributes<HTMLButtonElement>, OmitProps>,
+		Omit<Atoms, 'className' | 'color'> {
 	variant?: 'primary' | 'secondary' | 'outline' | 'ghost';
 	size?: 'sm' | 'md' | 'lg';
 	rounded?: boolean;
@@ -12,13 +15,9 @@ interface Props
 	suffix?: ReactNode;
 }
 
-export const Button = forwardRef(
-	(
-		{ variant, size, rounded, prefix, suffix, children, ...restProps }: Props,
-		ref?: React.Ref<HTMLButtonElement>,
-	) => {
-		const buttonStyle = button({ variant, size, rounded });
-
+export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
+	({ variant, size, rounded, prefix, suffix, children, ...restProps }, ref) => {
+		const buttonStyle = styles.button({ variant, size, rounded });
 		return (
 			<Box
 				as='button'
