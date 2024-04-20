@@ -19,12 +19,6 @@ globalStyle('body', {
 // 	verticalAlign: 'baseline',
 // });
 
-// globalStyle('a', {
-// 	textDecoration: 'none',
-// 	outline: 'none',
-// 	color: 'none',
-// });
-
 globalStyle('*, *::before, *::after', {
 	margin: 0,
 	padding: 0,
