@@ -1,4 +1,5 @@
 export { Accordion } from './Accordion';
+export { Tabs } from './Tabs';
 
 export { Input } from './Input/Input';
 export { Button } from './Button/Button';
