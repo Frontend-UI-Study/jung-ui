@@ -5,13 +5,13 @@ import { Box } from '../Box';
 import { TabsContext } from './TabsContext';
 
 export interface TabsProps
-	extends Omit<HTMLAttributes<HTMLDivElement>, 'defaultValue'>,
+	extends HTMLAttributes<HTMLDivElement>,
 		OmitAtomProps {
 	defaultValue?: string | number;
 }
 
 export const Tabs = forwardRef<HTMLDivElement, TabsProps>(
-	({ children, defaultValue, ...restProps }, ref?) => {
+	({ children, defaultValue, ...restProps }, ref) => {
 		const [currentTab, setCurrentTab] = useState(defaultValue);
 		const contextValue = useMemo(
 			() => ({
