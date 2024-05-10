@@ -6,13 +6,6 @@ import { Box } from '../Box';
 import { createContext, useContext } from 'react';
 import type { OmitAtomProps } from '../../types/atoms';
 import * as styles from './Card.css';
-import { CardContent } from './CardBody';
-import { CardDescription } from './CardDescription';
-import { CardFooter } from './CardFooter';
-import { CardHeader } from './CardHeader';
-import { CardMedia } from './CardMedia';
-import { CardSubTitle } from './CardSubTitle';
-import { CardTitle } from './CardTitle';
 import type { Product } from './types/product';
 
 const DEFAULT_VALUE: Product = {
@@ -44,7 +37,7 @@ export interface CardProps
 	layout?: 'horizontal' | 'stacked';
 }
 
-const Card = forwardRef<HTMLDivElement, CardProps>(
+export const Card = forwardRef<HTMLDivElement, CardProps>(
 	(
 		{
 			product,
@@ -75,13 +68,3 @@ const Card = forwardRef<HTMLDivElement, CardProps>(
 		);
 	},
 );
-const CardCompound = Object.assign(Card, {
-	Header: CardHeader,
-	Content: CardContent,
-	Footer: CardFooter,
-	Media: CardMedia,
-	Title: CardTitle,
-	SubTitle: CardSubTitle,
-	Description: CardDescription,
-});
-export { CardCompound as Card };
