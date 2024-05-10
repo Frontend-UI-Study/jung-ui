@@ -1,4 +1,3 @@
-// Card.stories.tsx
 import { Button, Card, type CardProps } from '@jung/design-system';
 import type { Meta, StoryObj } from '@storybook/react';
 
