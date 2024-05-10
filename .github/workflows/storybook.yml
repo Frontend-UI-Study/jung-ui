@@ -34,7 +34,7 @@ jobs:
 
       - name: depedency install
         if: steps.cache.outputs.cache-hit != 'true'
-        run: pnpm install --frozen-lockfile
+        run: turbo install
 
       - name: publish to chromatic
         id: chromatic
