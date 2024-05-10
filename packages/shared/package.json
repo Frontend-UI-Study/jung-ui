@@ -13,5 +13,8 @@
   },
   "dependencies": {
     "@jung/typescript-config": "workspace:*"
+  },
+  "devDependencies": {
+    "react": "^18.2.0"
   }
 }

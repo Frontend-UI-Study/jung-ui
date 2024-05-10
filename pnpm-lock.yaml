@@ -266,6 +266,10 @@ importers:
       '@jung/typescript-config':
         specifier: workspace:*
         version: link:../typescript-config
+    devDependencies:
+      react:
+        specifier: ^18.2.0
+        version: 18.2.0
 
   packages/typescript-config: {}
 
