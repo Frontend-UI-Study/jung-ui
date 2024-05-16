@@ -1,5 +1,5 @@
 import { type ButtonHTMLAttributes, type ReactNode, forwardRef } from 'react';
-import type { Atoms } from '../../utils/atoms';
+import type { OmitAtomProps } from '../../types/atoms';
 import { Box } from '../Box';
 import * as styles from './Button.css';
 
@@ -7,7 +7,7 @@ type OmitProps = 'prefix';
 
 interface ButtonProps
 	extends Omit<ButtonHTMLAttributes<HTMLButtonElement>, OmitProps>,
-		Omit<Atoms, 'className' | 'color'> {
+		OmitAtomProps {
 	variant?: 'primary' | 'secondary' | 'outline' | 'ghost';
 	size?: 'sm' | 'md' | 'lg';
 	rounded?: boolean;
