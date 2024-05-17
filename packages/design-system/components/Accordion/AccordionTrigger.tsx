@@ -6,6 +6,7 @@ import { ArrowDownOutlined, ArrowUpOutlined } from '../../assets/icons';
 import type { OmitAtomProps } from '../../types/atoms';
 import { Box } from '../Box';
 import { useAccordionContext } from './context/AccordionContext';
+import { useAccordionItemContext } from './context/AccordionItemContext';
 
 export interface AccordionTriggerProps
 	extends HTMLAttributes<HTMLDivElement>,
@@ -17,14 +18,19 @@ export const AccordionTrigger = forwardRef<
 	HTMLDivElement,
 	AccordionTriggerProps
 >(({ children, top, ...restProps }: AccordionTriggerProps, ref?) => {
-	const { toggle, handleToggle } = useAccordionContext();
+	const { openIndexes, handleToggleIndex } = useAccordionContext();
+	const { index, id } = useAccordionItemContext();
+	const isOpen = openIndexes.has(index!);
 
 	return (
 		<Box
 			ref={ref}
 			className={S.trigger}
-			onClick={handleToggle}
+			onClick={() => handleToggleIndex(index!)}
 			role='button'
+			id={id}
+			aria-expanded={isOpen}
+			aria-controls={id}
 			{...restProps}
 		>
 			<Box display='flex' flexDirection='column' rowGap='5'>
@@ -32,7 +38,7 @@ export const AccordionTrigger = forwardRef<
 				<Box as='p'>{children}</Box>
 			</Box>
 			<Box className={S.arrow}>
-				{toggle ? <ArrowUpOutlined /> : <ArrowDownOutlined />}
+				{isOpen ? <ArrowUpOutlined /> : <ArrowDownOutlined />}
 			</Box>
 		</Box>
 	);

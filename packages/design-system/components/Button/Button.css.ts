@@ -15,7 +15,7 @@ export const button = recipe({
 				border: 'none',
 				background: {
 					base: 'primary',
-					hover: 'primary400',
+					hover: 'primary100',
 				},
 				color: 'white',
 			}),
@@ -23,7 +23,7 @@ export const button = recipe({
 				border: 'none',
 				background: {
 					base: 'secondary',
-					hover: 'secondary200',
+					hover: 'blue',
 				},
 				color: 'white',
 			}),

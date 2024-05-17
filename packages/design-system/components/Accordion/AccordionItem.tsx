@@ -1,30 +1,27 @@
 import * as S from './AccordionItem.css';
 
-import { type HTMLAttributes, forwardRef, useMemo } from 'react';
+import { type HTMLAttributes, forwardRef, useId } from 'react';
 
-import { useToggle } from '@jung/shared/hooks';
 import type { OmitAtomProps } from '../../types/atoms';
 import { Box } from '../Box';
-import { AccoridonContext } from './context/AccordionContext';
+import { AccordionItemContext } from './context/AccordionItemContext';
 
 export interface AccordionItemProps
 	extends HTMLAttributes<HTMLDivElement>,
-		OmitAtomProps {}
+		OmitAtomProps {
+	index?: number;
+}
 
 export const AccordionItem = forwardRef<HTMLDivElement, AccordionItemProps>(
-	({ children, ...restProps }: AccordionItemProps, ref?) => {
-		const { toggle, setToggle, handleToggle } = useToggle();
+	({ children, index, ...restProps }: AccordionItemProps, ref?) => {
+		const id = useId();
 
-		const value = useMemo(
-			() => ({ toggle, setToggle, handleToggle }),
-			[handleToggle, setToggle, toggle],
-		);
 		return (
-			<AccoridonContext.Provider value={value}>
+			<AccordionItemContext.Provider value={{ index, id }}>
 				<Box ref={ref} className={S.item} {...restProps}>
 					{children}
 				</Box>
-			</AccoridonContext.Provider>
+			</AccordionItemContext.Provider>
 		);
 	},
 );
