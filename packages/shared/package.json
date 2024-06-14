@@ -12,9 +12,8 @@
     "lint": "echo 'Add lint script here'"
   },
   "dependencies": {
+    "react": "^18.2.0",
     "@jung/typescript-config": "workspace:*"
   },
-  "devDependencies": {
-    "react": "^18.2.0"
-  }
+  "devDependencies": {}
 }
