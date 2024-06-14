@@ -1,14 +1,14 @@
 import { Box } from '../Box';
 
 import { type InputHTMLAttributes, forwardRef } from 'react';
-import type { Atoms } from '../../utils/atoms';
+import type { OmitAtomProps } from '../../types/atoms';
 import * as styles from './Input.css';
 
 type OmitProps = 'size' | 'width' | 'height';
 
 interface InputProps
 	extends Omit<InputHTMLAttributes<HTMLInputElement>, OmitProps>,
-		Omit<Atoms, 'className' | 'color'> {
+		OmitAtomProps {
 	variant?: 'primary' | 'outline' | 'ghost';
 	size?: 'sm' | 'md' | 'lg';
 	rounded?: boolean;

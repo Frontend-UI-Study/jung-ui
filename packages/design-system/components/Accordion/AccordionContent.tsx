@@ -8,6 +8,7 @@ import { useBeforeMatch } from '@jung/shared/hooks';
 import type { OmitAtomProps } from '../../types/atoms';
 import { Box } from '../Box';
 import { useAccordionContext } from './context/AccordionContext';
+import { useAccordionItemContext } from './context/AccordionItemContext';
 import { useExpandableHeight } from './hooks/useExpandableHeight';
 
 export interface AccordionContentProps
@@ -20,19 +21,26 @@ export const AccordionContent = forwardRef<
 	HTMLDivElement,
 	AccordionContentProps
 >(({ className, children, ...restProps }: AccordionContentProps, ref?) => {
-	const { toggle, handleToggle } = useAccordionContext();
+	const { openIndexes, handleToggleIndex } = useAccordionContext();
+	const { index, id } = useAccordionItemContext();
+	const isOpen = openIndexes.has(index!);
+
 	const contentRef = useRef<HTMLDivElement>(null);
-	useBeforeMatch<HTMLDivElement>(contentRef, handleToggle);
-	const contentHeight = useExpandableHeight<HTMLDivElement>(contentRef, toggle);
+	useBeforeMatch<HTMLDivElement>(contentRef, () => handleToggleIndex(index!));
+	const contentHeight = useExpandableHeight<HTMLDivElement>(contentRef, isOpen);
 
 	return (
 		<Box
-			ref={contentRef || ref}
 			style={assignInlineVars({
-				[S.contentHeightVar]: `${contentHeight + 1}px`,
+				[S.contentHeightVar]: `${contentHeight}px`,
 			})}
-			className={S.content}
-			HIDDEN={toggle ? undefined : 'until-found'}
+			className={S.content({ isOpen })}
+			ref={contentRef || ref}
+			HIDDEN={isOpen ? undefined : 'until-found'}
+			role='region'
+			aria-labelledby={id}
+			tabIndex={isOpen ? 0 : -1}
+			id={`${id}-content`}
 			{...restProps}
 		>
 			{Children.map(children, (child, index) => (
