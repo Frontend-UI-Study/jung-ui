@@ -155,10 +155,10 @@ importers:
         specifier: ^8.1.0
         version: 8.1.0(typescript@5.3.3)
       '@types/react':
-        specifier: ^18.3.3
+        specifier: ^18.2.56
         version: 18.3.3
       '@types/react-dom':
-        specifier: ^18.3.0
+        specifier: ^18.2.19
         version: 18.3.0
       '@vanilla-extract/vite-plugin':
         specifier: latest
@@ -234,10 +234,10 @@ importers:
         specifier: ^20.11.24
         version: 20.11.24
       '@types/react':
-        specifier: ^18.3.3
+        specifier: ^18.2.61
         version: 18.3.3
       '@types/react-dom':
-        specifier: ^18.3.0
+        specifier: ^18.2.19
         version: 18.3.0
       '@vanilla-extract/css':
         specifier: ^1.14.1
@@ -269,7 +269,6 @@ importers:
       '@jung/typescript-config':
         specifier: workspace:*
         version: link:../typescript-config
-    devDependencies:
       react:
         specifier: ^18.2.0
         version: 18.2.0
